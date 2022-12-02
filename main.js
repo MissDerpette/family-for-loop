@@ -4,18 +4,31 @@ var chosenFam = document.getElementById("chosen-fam")
 var myButton1 = document.getElementById("my-button")
 var myButton2 = document.getElementById("my-button2")
 var firstHeadline = document.getElementById("first-headline")
-var listFamily = document.getElementById("bio-fam").getElementsByTagName("li");
+var secondHeadLine = document.getElementById("second-headline")
+// var listFamily = document.getElementById("bio-fam").getElementsByTagName("li");
 
 
 // for (i = 0; i < listFamily.length; i++) {
 //     listFamily[i].addEventListener("click" , activateFam);
 // }
 
-bioFam.addEventListener("click" , activateFam);
+bioFam.addEventListener("click" , activateBioFam);
 
-function activateFam(e) {
+function activateBioFam(e) {
     if (e.target.nodeName == "LI") {
         firstHeadline.innerHTML = e.target.innerHTML;
+        for (i = 0; i < e.target.parentNode.children.length; i++) {
+            e.target.parentNode.children[i].classList.remove("active");
+      }
+      e.target.classList.add("active");
+    }
+}
+
+chosenFam.addEventListener("click" , activateChosenFam);
+
+function activateChosenFam(e) {
+    if (e.target.nodeName == "LI") {
+        secondHeadLine.innerHTML = e.target.innerHTML;
         for (i = 0; i < e.target.parentNode.children.length; i++) {
             e.target.parentNode.children[i].classList.remove("active");
       }
