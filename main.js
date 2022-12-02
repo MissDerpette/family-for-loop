@@ -1,6 +1,8 @@
 var newFamCounter = 1;
 var bioFam = document.getElementById("bio-fam")
-var myButton = document.getElementById("my-button")
+var chosenFam = document.getElementById("chosen-fam")
+var myButton1 = document.getElementById("my-button")
+var myButton2 = document.getElementById("my-button2")
 var firstHeadline = document.getElementById("first-headline")
 var listFamily = document.getElementById("bio-fam").getElementsByTagName("li");
 
@@ -21,12 +23,15 @@ function activateFam(e) {
     }
 }
 
-myButton.addEventListener("click" , addNewFam );
-
+// button for bio fam
+myButton1.addEventListener("click" , addNewFam );
 function addNewFam() {
     bioFam.innerHTML += "<li> New Person " + newFamCounter +  "</li>"; 
-    newFamCounter++;
-
-    
+    newFamCounter++; 
 }
-
+// button for chosen  fam
+myButton2.addEventListener("click" , addNewFam2 );
+function addNewFam2() {
+    chosenFam.innerHTML += "<li> New Person " + newFamCounter +  "</li>"; 
+    newFamCounter++; 
+}
